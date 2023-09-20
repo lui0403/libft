@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luebina <luebina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kojiebina <kojiebina@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 02:56:52 by luebina           #+#    #+#             */
-/*   Updated: 2023/09/20 05:05:07 by luebina          ###   ########.fr       */
+/*   Updated: 2023/09/21 05:50:08 by kojiebina        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+// #include <stdio.h>
+// #include <string.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -18,6 +20,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*ptr2;
 	size_t	i;
 
+	if (dst == NULL && src == NULL)
+		return (dst);
 	ptr = (char *)dst;
 	ptr2 = (char *)src;
 	i = 0;
@@ -34,3 +38,21 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	}
 	return (dst);
 }
+
+// int main()
+// {
+//     // テスト用のデータ
+//     char *src = NULL;
+//     char *dest1 = NULL;
+//     char *dest2 = NULL;
+
+//     // 自作の ft_memmove を使用してコピー
+//     ft_memmove(dest1, src, 5);
+
+//     // 標準ライブラリの memmove を使用してコピー
+//     memmove(dest2, src, 5);
+
+// 	printf("%s, %s", dest1, dest2);
+
+//     return 0;
+// }

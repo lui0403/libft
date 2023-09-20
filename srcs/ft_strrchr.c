@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: luebina <luebina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kojiebina <kojiebina@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 06:07:28 by luebina           #+#    #+#             */
-/*   Updated: 2023/09/20 06:25:58 by luebina          ###   ########.fr       */
+/*   Updated: 2023/09/21 06:08:43 by kojiebina        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	str = (char *)s;
 	i = 0;
-	j = 0;
+	j = -1;
 	while (str[i])
 	{
 		if (str[i] == c)
@@ -29,7 +29,36 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if (str[i] == c)
 		return (&str[i]);
-	if (j != 0)
+	if (j != -1)
 		return (&str[j]);
-	return (0);
+	return (NULL);
 }
+
+// #include <stdio.h>
+// #include <string.h>
+
+// int main()
+// {
+//     // テスト用の文字列
+//     const char *str = "abbbbbbbb!";
+//     int target_char = 'a';
+
+//     // 自作の ft_strrchr を使用して検索
+//     char *result1 = ft_strrchr(str, target_char);
+
+//     // 標準ライブラリの strrchr を使用して検索
+//     char *result2 = strrchr(str, target_char);
+
+//     // 結果を比較
+//     if ((result1 == NULL && result2 == NULL) || (result1 && result2 && *result1 == *result2))
+//     {
+//         printf("ft_strrchr と strrchr で同じ結果が得られました。\n");
+//     }
+//     else
+//     {
+//         printf("ft_strrchr と strrchr で異なる結果が得られました。\n");
+//     }
+// 	printf("%s, %s", result1, result2);
+
+//     return 0;
+// }
