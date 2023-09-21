@@ -6,7 +6,7 @@
 /*   By: luebina <luebina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 06:07:28 by luebina           #+#    #+#             */
-/*   Updated: 2023/09/20 07:39:27 by luebina          ###   ########.fr       */
+/*   Updated: 2023/09/22 06:48:38 by luebina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	str = (char *)s;
 	i = 0;
-	j = 0;
+	j = -1;
 	while (str[i])
 	{
 		if (str[i] == c)
@@ -29,7 +29,7 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	if (str[i] == c)
 		return (&str[i]);
-	if (j != 0)
+	if (j != -1)
 		return (&str[j]);
 	return (NULL);
 }

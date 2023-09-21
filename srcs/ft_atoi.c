@@ -6,11 +6,11 @@
 /*   By: luebina <luebina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 07:07:45 by luebina           #+#    #+#             */
-/*   Updated: 2023/09/20 07:08:14 by luebina          ###   ########.fr       */
+/*   Updated: 2023/09/22 06:31:59 by luebina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	neg;
@@ -19,16 +19,16 @@ int	ft_atoi(const char *str)
 	i = 0;
 	neg = 1;
 	nb = 0;
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || \
-			str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
+	while (nptr[i] == '\t' || nptr[i] == '\n' || nptr[i] == '\v' || \
+			nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == ' ')
 		i++;
-	if (str[i] == '-')
+	if (nptr[i] == '-')
 		neg = -1;
-	if ((str[i] == '-') || (str[i] == '+'))
+	if ((nptr[i] == '-') || (nptr[i] == '+'))
 		i++;
-	while ((str[i] >= 48) && (str[i] <= 57))
+	while ((nptr[i] >= 48) && (nptr[i] <= 57))
 	{
-		nb = nb * 10 + (str[i] - 48);
+		nb = nb * 10 + (nptr[i] - 48);
 		i++;
 	}
 	return (nb * neg);
