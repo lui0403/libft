@@ -6,11 +6,11 @@
 /*   By: luebina <luebina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 06:07:28 by luebina           #+#    #+#             */
-/*   Updated: 2023/09/20 06:25:58 by luebina          ###   ########.fr       */
+/*   Updated: 2023/09/20 07:39:27 by luebina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -31,5 +31,5 @@ char	*ft_strrchr(const char *s, int c)
 		return (&str[i]);
 	if (j != 0)
 		return (&str[j]);
-	return (0);
+	return (NULL);
 }

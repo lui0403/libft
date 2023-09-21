@@ -1,21 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luebina <luebina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 01:29:48 by luebina           #+#    #+#             */
-/*   Updated: 2023/09/20 07:40:03 by luebina          ###   ########.fr       */
+/*   Created: 2023/09/20 06:57:18 by luebina           #+#    #+#             */
+/*   Updated: 2023/09/20 07:06:05 by luebina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122) \
-	|| (c >= 48 && c <= 57))
-		return (1);
-	return (0);
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	if (!*little)
+		return ((char *)big);
+	while (big[i] && i < len)
+	{
+		j = 0;
+		while (big[i + j] && little[j] \
+		&& big[i + j] == little[j] && i + j < len)
+			j++;
+		if (!little[j])
+			return ((char *)&big[i]);
+		i++;
+	}
+	return (NULL);
 }

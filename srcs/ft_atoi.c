@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luebina <luebina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 01:29:48 by luebina           #+#    #+#             */
-/*   Updated: 2023/09/20 07:40:03 by luebina          ###   ########.fr       */
+/*   Created: 2023/09/20 07:07:45 by luebina           #+#    #+#             */
+/*   Updated: 2023/09/20 07:08:14 by luebina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_isalnum(int c)
+int	ft_atoi(const char *str)
 {
-	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122) \
-	|| (c >= 48 && c <= 57))
-		return (1);
-	return (0);
+	int	i;
+	int	neg;
+	int	nb;
+
+	i = 0;
+	neg = 1;
+	nb = 0;
+	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || \
+			str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
+		i++;
+	if (str[i] == '-')
+		neg = -1;
+	if ((str[i] == '-') || (str[i] == '+'))
+		i++;
+	while ((str[i] >= 48) && (str[i] <= 57))
+	{
+		nb = nb * 10 + (str[i] - 48);
+		i++;
+	}
+	return (nb * neg);
 }

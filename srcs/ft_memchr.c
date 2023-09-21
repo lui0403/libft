@@ -6,9 +6,11 @@
 /*   By: luebina <luebina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 06:35:11 by luebina           #+#    #+#             */
-/*   Updated: 2023/09/20 06:35:33 by luebina          ###   ########.fr       */
+/*   Updated: 2023/09/20 06:46:25 by luebina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, unsigned int n)
 {
@@ -25,5 +27,5 @@ void	*ft_memchr(const void *s, int c, unsigned int n)
 	}
 	if (str[i] == (unsigned char)c)
 		return (&str[i]);
-	return (0);
+	return (NULL);
 }
