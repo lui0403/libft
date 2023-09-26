@@ -6,7 +6,7 @@
 /*   By: luebina <luebina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 06:35:11 by luebina           #+#    #+#             */
-/*   Updated: 2023/09/22 06:36:55 by luebina          ###   ########.fr       */
+/*   Updated: 2023/09/27 03:33:09 by luebina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return (&str[i]);
 		i++;
 	}
-	if (str[i] == (unsigned char)c)
+	if (c == '\0' && str[i] == (unsigned char)c)
 		return (&str[i]);
 	return (NULL);
 }
