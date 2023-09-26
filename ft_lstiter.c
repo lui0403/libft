@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: luebina <luebina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/20 07:07:45 by luebina           #+#    #+#             */
-/*   Updated: 2023/09/22 06:31:59 by luebina          ###   ########.fr       */
+/*   Created: 2023/09/26 17:42:52 by kojiebina         #+#    #+#             */
+/*   Updated: 2023/09/26 22:42:48 by luebina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *nptr)
-{
-	int	i;
-	int	neg;
-	int	nb;
+#include "libft.h"
 
-	i = 0;
-	neg = 1;
-	nb = 0;
-	while (nptr[i] == '\t' || nptr[i] == '\n' || nptr[i] == '\v' || \
-			nptr[i] == '\f' || nptr[i] == '\r' || nptr[i] == ' ')
-		i++;
-	if (nptr[i] == '-')
-		neg = -1;
-	if ((nptr[i] == '-') || (nptr[i] == '+'))
-		i++;
-	while ((nptr[i] >= 48) && (nptr[i] <= 57))
+void	ft_lstiter(t_list *lst, void (*f)(void *))
+{
+	while (lst)
 	{
-		nb = nb * 10 + (nptr[i] - 48);
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (nb * neg);
 }
