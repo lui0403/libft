@@ -6,14 +6,13 @@
 /*   By: luebina <luebina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 01:49:01 by luebina           #+#    #+#             */
-/*   Updated: 2023/09/27 03:45:34 by luebina          ###   ########.fr       */
+/*   Updated: 2023/09/27 04:25:47 by luebina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
