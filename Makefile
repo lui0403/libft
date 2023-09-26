@@ -10,17 +10,19 @@ ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c \
 ft_toupper.c
 BONUS_SRC = ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
 ft_lstdelone.c ft_lstiter.c ft_lstlast.c ft_lstmap.c ft_lstnew.c ft_lstsize.c
+OBJ = $(SRC:.c=.o)
+OBJ_BONUS = $(BONUS_SRC:.c=.o)
 INC_DIR = ./
 
-bonus:
-	$(CC) $(CFLAGS) -c $(SRC) $(BONUS_SRC) -I $(INC_DIR)
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJ)
 	ar rc $(NAME) *.o
+
+bonus: $(OBJ_BONUS) $(NAME)
 
 all: $(NAME)
-
-$(NAME):
-	$(CC) $(CFLAGS) -c $(SRC) -I $(INC_DIR)
-	ar rc $(NAME) *.o
 
 clean:
 	rm -f *.o
