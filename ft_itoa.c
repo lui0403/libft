@@ -6,7 +6,7 @@
 /*   By: luebina <luebina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 03:37:24 by luebina           #+#    #+#             */
-/*   Updated: 2023/09/27 03:13:53 by luebina          ###   ########.fr       */
+/*   Updated: 2023/09/27 07:56:55 by luebina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ char	*int_to_char(char *ptr, int n, int len)
 		len--;
 	}
 	ptr[len] = n % 10 + '0';
-
 	return (ptr);
 }
 
